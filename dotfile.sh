@@ -14,6 +14,11 @@ install_brew(){
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
+set_brew_privileges(){
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/thomasboom/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
 check_dockutil(){
 # Check for dockUtil and install if not found
   # Get the URL of the latest PKG From the dockUtil GitHub repo
@@ -87,9 +92,14 @@ set_menubar(){
     defaults write com.apple.networkConnect VPNShowTime -string "1"
 }
 
+download_brewfile(){
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
 #run functions
 install_rosetta
 install_brew
+set_brew_privileges
 check_dockutil
 run_finder
 set_menubar
