@@ -1,8 +1,6 @@
 # specify a directory to install
 cask_args appdir: '/Applications'
 # install packages
-tap 'homebrew/cask' || true
-# Casks
 cask 'microsoft-openjdk'
 cask 'arc'
 cask 'dropbox'
