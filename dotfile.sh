@@ -105,4 +105,4 @@ run_finder
 set_menubar
 brew_check_brewfile
 remove_dock
-kbuild_dock
+build_dock
